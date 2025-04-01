@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Class {
+  id         String       @id @default(uuid())
+  courseCode String
+  qrId       String       @unique
+  date       String
+  startTime  String
+  endTime    String
+  createdAt  DateTime     @default(now())
+  Attendance Attendance[]
+}
+
+model Attendance {
+  id           String   @id @default(uuid())
+  classId      String
+  class        Class    @relation(fields: [classId], references: [id])
+  matricNumber String
+  name         String
+  date         String
+  createdAt    DateTime @default(now())
+
+  @@unique([classId, matricNumber, date]) // Ensures a student can only mark attendance once per class per day
+}
