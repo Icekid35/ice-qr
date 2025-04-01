@@ -1,6 +1,5 @@
 Canvas Here’s a detailed README template for your QR attendance tracking PWA project:
 
-```markdown
 # QR Attendance Tracking PWA
 
 A Progressive Web Application (PWA) for attendance tracking using QR codes. This application allows students to mark their attendance by scanning a QR code and entering their matric number and name. Admins can manage class sessions, track attendance, and generate reports.
