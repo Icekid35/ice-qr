@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { Helmet } from "react-helmet";
+import Link from "next/link";
 export default function AttendanceForm() {
   const { qrid } = useParams();
 
