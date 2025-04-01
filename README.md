@@ -1,4 +1,3 @@
-Canvas Here’s a detailed README template for your QR attendance tracking PWA project:
 
 # QR Attendance Tracking PWA
 
@@ -88,4 +87,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Tailwind CSS for styling
 - PDF-lib for generating PDFs
 
-```
+
