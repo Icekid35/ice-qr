@@ -131,6 +131,9 @@ export default function AttendanceForm() {
               <strong>Course:</strong> {classData.courseCode}
             </p>
             <p>
+            <p>
+          <strong>Qr Id:</strong> {classData.qrId}
+        </p>
               <strong>Date:</strong> {classData.date}
             </p>
             <p>
@@ -143,8 +146,15 @@ export default function AttendanceForm() {
         ) : (
           <p className="text-center text-red-500">Class not found.</p>
         )}
-        {success ? (
-          <p className="text-green-500 text-center">{success}</p>
+        {success ? (<>
+        
+         <p className="text-green-500 text-center">{success}</p>
+         <Link href="/">
+            <button className="w-full py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+              Go TO Home Screen
+            </button>
+          </Link>
+        </>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
             <input

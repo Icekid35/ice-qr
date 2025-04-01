@@ -107,6 +107,9 @@ export default function ClassDetails() {
           <strong>Course Code:</strong> {classData.courseCode}
         </p>
         <p className="text-lg">
+          <strong>Qr Id:</strong> {classData.qrId}
+        </p>
+        <p className="text-lg">
           <strong>Date:</strong> {classData.date}
         </p>
         <p className="text-lg">
