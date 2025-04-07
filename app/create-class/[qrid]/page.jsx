@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { QRCodeCanvas } from "qrcode.react";
 import jsPDF from "jspdf";
 import { Helmet } from "react-helmet";
+import Link from "next/link";
 
 export default function ClassDetails() {
   const { qrid } = useParams();
@@ -71,6 +72,11 @@ export default function ClassDetails() {
     doc.text("End Time:", labelX, 50);
     doc.setFont("helvetica", "normal");
     doc.text(classData.endTime, valueX, 50);
+
+    doc.setFont("helvetica", "bold");
+    doc.text("QR ID:", labelX, 60);
+    doc.setFont("helvetica", "normal");
+    doc.text(classData.qrId, valueX, 60);
 
     // Class QR Code Title
     doc.setFont("helvetica", "bold");
@@ -141,12 +147,20 @@ export default function ClassDetails() {
           >
             Print QR Code
           </button>
-          {/* <button
+          <button
             onClick={() => navigator.clipboard.writeText(`${window.location.origin}/attendance/${classData.qrId}`)}
             className="py-2 px-4 bg-gray-600 text-white rounded-lg hover:bg-gray-700"
           >
             Copy Attendance Link
-          </button> */}
+          </button>
+         <Link href={`/view-attendance`}>
+         
+          <button
+            className="py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-green-700"
+          >
+           Check Attendance
+          </button>
+         </Link>
         </div>
       </div>
     </div>
